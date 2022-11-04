@@ -56,8 +56,6 @@ p{
     width: 300px;
     display: grid;
     border: 2px black solid;
-
-    margin-bottom: 30px;
 }
 
 
@@ -65,6 +63,7 @@ p{
     display: flex;
     justify-content: space-between;
     gap: 26px;
+    margin-top: 30px;
 }
 
 
