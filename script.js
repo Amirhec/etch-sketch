@@ -20,5 +20,12 @@ function grid(selectedSize){
     let sketchboard= document.querySelector('.sketch-content');
     sketchboard.style.gridTemplateColumns = `repeat(${selectedSize},1fr)`;
     sketchboard.style.gridTemplateRows = `repeat(${selectedSize},1fr)`;
+    
+    let divSketch = selectedSize*selectedSize
+    for (let i = 0; i < divSketch; i++){
+        let div = document.createElement('div');
+        sketchboard.appendChild(div)
+
+    }
 }
 
