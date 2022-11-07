@@ -1,15 +1,24 @@
 let buttonSize = document.querySelector('#size')
-buttonSize.addEventListener('click', adjustSize)
-function adjustSize(){
+buttonSize.addEventListener('click', function(){
+let selectedSize = beforeSelectedSize()
+grid(selectedSize)
+
+})
+
+function beforeSelectedSize(){
     let input = prompt('please enter a value for your grid')
-    return input
+    if(input > 100 || input < 0){
+        return alert("please enter a number between 0-100")
+    }else{
+        return input
+    }
 }
-let selectSize = adjustSize()
 
-function grid(selectSize){
+
+
+function grid(selectedSize){
     let sketchboard= document.querySelector('.sketch-content');
-    sketchboard.style.gridTemplateColumns = `repeat(${selectSize},1fr)`;
-    sketchboard.style.gridTemplateRows = `repeat(${selectSize},1fr)`;
+    sketchboard.style.gridTemplateColumns = `repeat(${selectedSize},1fr)`;
+    sketchboard.style.gridTemplateRows = `repeat(${selectedSize},1fr)`;
 }
 
-grid(selectSize);
