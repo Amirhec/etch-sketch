@@ -5,6 +5,12 @@ grid(selectedSize)
 
 })
 
+let clearButton = document.querySelector('#clear')
+clearButton.addEventListener('click',function(){
+
+grid()
+})
+
 function beforeSelectedSize(){
     let input = prompt('please enter a value for your grid')
     if(input > 100 || input < 0){
@@ -24,6 +30,9 @@ function grid(selectedSize){
     let divSketch = selectedSize*selectedSize
     for (let i = 0; i < divSketch; i++){
         let div = document.createElement('div');
+        div.addEventListener("mouseover", function(){
+        div.style.backgroundColor = "black"
+        })
         sketchboard.appendChild(div)
 
     }
