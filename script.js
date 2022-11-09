@@ -1,5 +1,15 @@
 let color = 'black'
 
+// will load a default 12*12 grid
+
+function defaultBoard(){
+    grid(12)
+
+}
+defaultBoard();
+
+
+
 
 let buttonSize = document.querySelector('#size')
 buttonSize.addEventListener('click', function(){
@@ -40,8 +50,10 @@ function fillColor(){
     if(color == 'rainbow'){
         this.style.backgroundColor = `hsl(${Math.random()*360}, 100%,50%)`
 
-    }else{
+    }else if(color =='black'){
         this.style.backgroundColor = 'black'
+    }else if(color == 'gray'){
+        this.style.backgroundColor = ''
     }
 
 }
