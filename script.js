@@ -1,3 +1,6 @@
+let color = 'black'
+
+
 let buttonSize = document.querySelector('#size')
 buttonSize.addEventListener('click', function(){
 let selectedSize = beforeSelectedSize()
@@ -5,11 +8,7 @@ grid(selectedSize)
 
 })
 
-let clearButton = document.querySelector('#clear')
-clearButton.addEventListener('click',function(){
 
-grid()
-})
 
 function beforeSelectedSize(){
     let input = prompt('please enter a value for your grid')
@@ -30,11 +29,27 @@ function grid(selectedSize){
     let divSketch = selectedSize*selectedSize
     for (let i = 0; i < divSketch; i++){
         let div = document.createElement('div');
-        div.addEventListener("mouseover", function(){
-        div.style.backgroundColor = "black"
-        })
+        div.addEventListener("mouseover", fillColor)
         sketchboard.appendChild(div)
 
     }
+}
+
+
+function fillColor(){
+    if(color == 'rainbow'){
+        this.style.backgroundColor = `hsl(${Math.random()*360}, 100%,50%)`
+
+    }else{
+        this.style.backgroundColor = 'black'
+    }
+
+}
+
+
+function selectColor(selectedColor){
+    color = selectedColor
+
+
 }
 
