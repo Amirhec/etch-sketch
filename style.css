@@ -1,5 +1,5 @@
 body{
-    background-color:gray;
+    background-color: grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,6 +58,11 @@ p{
     border: 2px black solid;
 }
 
+
+#reset{
+    margin-bottom: 12px;
+    cursor: pointer;
+}
 
 .bottom{
     display: flex;
