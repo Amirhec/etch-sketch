@@ -1,12 +1,18 @@
 let color = 'black'
 
-// will load a default 12*12 grid
+// will load a default 16x16 grid and mixed with reset button
+
+
+
+
 
 function defaultBoard(){
-    grid(12)
+    grid(16)
 
 }
 defaultBoard();
+
+
 
 
 
@@ -65,3 +71,15 @@ function selectColor(selectedColor){
 
 }
 
+
+let resetButton = document.querySelector('reset')
+reset.addEventListener('click',reset)
+
+function reset(){
+    let resetDivs = document.querySelectorAll('div')
+
+    for(let i = 0; i<resetDivs.length; i++){
+        let temp = resetDivs[i]
+        temp.style.backgroundColor = 'gray'
+    }
+}
